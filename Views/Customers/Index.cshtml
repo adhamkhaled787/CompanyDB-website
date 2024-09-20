@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CMP.Models.Customer>
+
+@{
+    ViewData["Title"] = "CUSTOMER DATA";
+}
+<link href="~/css/table.css" rel="stylesheet" />
+<h1>CUSTOMERS</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table-custom">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerId)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td class="action-btns">
+                    <a class=" edit-btn" asp-action="Edit" asp-route-id="@item.CustomerId">Edit</a> |
+                    <a class="details-btn" asp-action="Details" asp-route-id="@item.CustomerId">Details</a> |
+                    <a class="delete-btn" asp-action="Delete" asp-route-id="@item.CustomerId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

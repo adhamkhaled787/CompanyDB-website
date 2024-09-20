@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CMP.Models.Orderdetail>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Orders Details</h1>
+<link href="~/css/table.css" rel="stylesheet" />
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table-custome">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Order)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order.OrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.ProductId)
+            </td>
+            <td class="action-btns">
+                <a class="edit-btn" asp-action="Edit" asp-route-id="@item.OrderDetailId">Edit</a> |
+                <a class="details-btn" asp-action="Details" asp-route-id="@item.OrderDetailId">Details</a> |
+                <a class="delete-btn" asp-action="Delete" asp-route-id="@item.OrderDetailId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

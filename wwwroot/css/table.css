@@ -1,0 +1,63 @@
+﻿
+body {
+    background-color: whitesmoke;
+}
+.table-custom {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+    /* Table Header */
+    .table-custom thead {
+        background-color: #0166B1;
+        color: white;
+    }
+
+    .table-custom th {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 2px solid #ddd;
+    }
+
+    /* Table Rows */
+    .table-custom tbody tr {
+        background-color: #f2f2f2;
+    }
+
+    .table-custom tbody tr:hover {
+        background-color: #ddd;
+    }
+
+    /* Table Data Cells */
+    .table-custom td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+/* Action Buttons */
+.action-btns a {
+    text-decoration: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+.action-btns .edit-btn {
+    background-color: #007bff; /* Blue */
+}
+
+.action-btns .details-btn {
+    background-color: #17a2b8; /* Teal */
+}
+
+.action-btns .delete-btn {
+    background-color: #dc3545; /* Red */
+}
+
+.action-btns a:hover {
+    opacity: 0.8;
+}

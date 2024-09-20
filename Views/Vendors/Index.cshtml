@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CMP.Models.Vendor>
+
+@{
+    ViewData["Title"] = "Vendors";
+}
+<link href="~/css/table.css" rel="stylesheet" />
+<h1>VENDORS</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table-custom">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VendorId)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td class="action-btns">
+                    <a class="edit-btn" asp-action="Edit" asp-route-id="@item.VendorId">Edit</a> |
+                    <a class="details-btn" asp-action="Details" asp-route-id="@item.VendorId">Details</a> |
+                    <a class="delete-btn" asp-action="Delete" asp-route-id="@item.VendorId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
